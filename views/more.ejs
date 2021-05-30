@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('header') -%>
+
+<body>
+
+<%- include('navbar') -%>
+<div class="container">
+<h2 class="mt-3 mb-5 text-center">TOP Products in this week</h2>
+
+
+<div class="row">
+
+<div class="p-0 card my-5 mx-2" style="width: 19rem;">
+  <img src="https://mediseva.online/img/default-product.jpg" class="card-img-top">
+  <div class="card-body float-right">
+    <h3 class="card-text mb-4"><%= results.title %></h3>
+    <p class="card-text m-0 mb-1">Price : <%= results.price %>$ </p>
+    <p class="card-text">Descreption : <%= results.descreption %> </p>
+
+
+    <form method="POST" action="/product/<%= results._id %>" >
+      <a href="/product/edit/<%= results._id %>" class="btn edit-btn btn-info">
+        Edit <i class="far fa-edit"></i>
+      </a>
+      <input type="hidden" name="_method" value="DELETE">
+      <button type="submit" class="btn delete-btn btn-danger">
+          Delete <i class="far fa-trash-alt"></i>
+      </button>
+    </form>
+  </div>
+</div>
+
+</div>
+
+
+
+
+</div>
+
+
+<%- include('footer') -%>
+<%- include('bootstrap_scripts') -%>
+</body>
+</html>
