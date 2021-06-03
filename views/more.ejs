@@ -6,12 +6,12 @@
 
 <%- include('navbar') -%>
 <div class="container">
-<h2 class="mt-3 mb-5 text-center">TOP Products in this week</h2>
+<h2 class="mt-3 mb-3 text-center"><%= results.title %> </h2>
 
 
-<div class="row">
+<div class="d-flex flex-wrap justify-content-center row">
 
-<div class="p-0 card my-5 mx-2" style="width: 19rem;">
+<div class="p-0 card my-5 mx-2" style="width: 22rem;">
   <img src="https://mediseva.online/img/default-product.jpg" class="card-img-top">
   <div class="card-body float-right">
     <h3 class="card-text mb-4"><%= results.title %></h3>
@@ -19,12 +19,12 @@
     <p class="card-text">Descreption : <%= results.descreption %> </p>
 
 
-    <form method="POST" action="/product/<%= results._id %>" >
-      <a href="/product/edit/<%= results._id %>" class="btn edit-btn btn-info">
+    <form class="d-flex flex-wrap justify-content-around"  method="POST" action="/product/<%= results._id %>" >
+      <a style="width: 110px;"  href="/product/edit/<%= results._id %>" class="btn edit-btn btn-info">
         Edit <i class="far fa-edit"></i>
       </a>
       <input type="hidden" name="_method" value="DELETE">
-      <button type="submit" class="btn delete-btn btn-danger">
+      <button style="width: 110px;"  type="submit" class="btn  delete-btn btn-danger">
           Delete <i class="far fa-trash-alt"></i>
       </button>
     </form>
